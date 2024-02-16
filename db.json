@@ -1,0 +1,108 @@
+{
+  "posts": [
+    {
+      "id": "B1-024",
+      "name": "Juan A. Carlos",
+      "email": "Carlos@gmail.com",
+      "status": "Single",
+      "address": "Brgy. Tagajanlang, Legazpi City"
+    },
+    {
+      "id": "B1-001",
+      "name": "John B. Doe",
+      "email": "Doe@gmail.com",
+      "status": "Single",
+      "address": "Brgy. Hindi, Legazpi City"
+    },
+    {
+      "id": "B2-001",
+      "name": "John C. Smith",
+      "email": "Smith@gmail.com",
+      "status": "Single",
+      "address": "Brgy. Dikoalam, Legazpi City"
+    },
+    {
+      "id": "B5-001",
+      "name": "Me D. Bee",
+      "email": "Bee@gmail.com",
+      "status": "Single",
+      "address": "Brgy. Tagajanlang, Legazpi City"
+    },
+    {
+      "id": "B3-001",
+      "name": "Victory E. Magtanggol",
+      "email": "Magtanggol@gmail.com",
+      "status": "Married",
+      "address": "Brgy. Tagajanlang, Legazpi City"
+    },
+    {
+      "id": "B1-002",
+      "name": "James F. Boyboy",
+      "email": "Boyboy@gmail.com",
+      "status": "Married",
+      "address": "Brgy. Dikoalam, Legazpi City"
+    },
+    {
+      "id": "10123",
+      "name": "Jericho",
+      "email": "Jericho@gmail.com",
+      "task": "Task 2 ",
+      "desc": "Create Page",
+      "status": "Single",
+      "address": "Bulacan"
+    },
+    {
+      "id": "22",
+      "name": "RHONA",
+      "email": "rhona@gmail.com",
+      "task": "rhona",
+      "desc": "rhona",
+      "status": "rhona",
+      "address": "rhona"
+    }
+  ],
+  "comments": [
+    {
+      "id": "B1-024",
+      "name": "Juan A. Carlos",
+      "email": "Carlos@gmail.com",
+      "status": "Single",
+      "address": "Brgy. Tagajanlang, Legazpi City"
+    },
+    {
+      "id": "B1-001",
+      "name": "John B. Doe",
+      "email": "Doe@gmail.com",
+      "status": "Single",
+      "address": "Brgy. Hindi, Legazpi City"
+    },
+    {
+      "id": "B2-001",
+      "name": "John C. Smith",
+      "email": "Smith@gmail.com",
+      "status": "Single",
+      "address": "Brgy. Dikoalam, Legazpi City"
+    },
+    {
+      "id": "B5-001",
+      "name": "Me D. Bee",
+      "email": "Bee@gmail.com",
+      "status": "Single",
+      "address": "Brgy. Tagajanlang, Legazpi City"
+    },
+    {
+      "id": "B3-001",
+      "name": "Victory E. Magtanggol",
+      "email": "Magtanggol@gmail.com",
+      "status": "Married",
+      "address": "Brgy. Tagajanlang, Legazpi City"
+    },
+    {
+      "id": "B1-002",
+      "name": "James F. Boyboy",
+      "email": "Boyboy@gmail.com",
+      "status": "Married",
+      "address": "Brgy. Dikoalam, Legazpi City"
+    }
+  ]
+}

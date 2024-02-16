@@ -1,3 +1,14 @@
+import { createRouter, createWebHistory } from "vue-router";
+
+const User = {
+  template: `
+    <div class="user">
+      <h2>User {{ $route.params.id }}</h2>
+      <router-view></router-view>
+    </div>
+  `,
+};
+
 const routes = [
   {
     path: "/",
@@ -7,8 +18,19 @@ const routes = [
     component: () => import("layouts/MainLayout.vue"),
     children: [
       {
-        path: "",
+        path: "dashboard-page",
+        name: "dashboard-page",
         component: () => import("pages/FrontendExercise/DashboardPage.vue"),
+      },
+      {
+        path: "table-page",
+        name: "table-page",
+        component: () => import("pages/FrontendExercise/TablePage.vue"),
+      },
+      {
+        path: "form-page",
+        name: "form-page",
+        component: () => import("pages/FrontendExercise/FormPage.vue"),
       },
     ],
   },

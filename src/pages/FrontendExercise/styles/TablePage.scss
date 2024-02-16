@@ -1,0 +1,150 @@
+// TABLE PAGE
+
+.table-page {
+  .table-container-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .right {
+      display: flex;
+      width: fit-content;
+      height: fit-content;
+    }
+
+    .add-employee-btn {
+      width: 110px;
+      background-color: #249990;
+      color: #ffffff;
+      border: none;
+      padding: 2px;
+      font-size: 12px;
+      font-family: "Source Sans 3", sans-serif;
+      font-weight: 400;
+      border-radius: 20px;
+      margin-right: 16px;
+      cursor: pointer;
+    }
+
+    .add-employee-btn:hover {
+      opacity: 0.7;
+    }
+
+    .add-employee-btn:active {
+      opacity: 0.9;
+    }
+
+    .search-employee-form {
+      height: 24px;
+      width: 128px;
+      background-color: #ffffff;
+      color: #555;
+      display: flex;
+
+      .search-employee-form::placeholder {
+        font-size: 12px;
+        font-family: "Source Sans 3", sans-serif;
+        font-weight: 400;
+      }
+
+      .search-employee-input {
+        font-size: 12px;
+        font-family: "Source Sans 3", sans-serif;
+        font-weight: 400;
+        border: 1px solid #555;
+        border-radius: 16px;
+        width: 128px;
+        padding-left: 16px;
+        background: transparent url("~assets/icons/mini-search-icon.svg")
+          no-repeat calc(100% - 10px) center;
+      }
+    }
+  }
+
+  .filters {
+    display: flex;
+    font-size: 12px;
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 400;
+    align-items: center;
+
+    .filter-label,
+    .filter-by,
+    .select-date {
+      margin-right: 10px;
+      margin-bottom: 30px;
+
+      .filter-select {
+        height: 24px;
+        font-size: 12px;
+        font-family: "Source Sans 3", sans-serif;
+        font-weight: 400;
+        border: 1px solid #555;
+        border-radius: 16px;
+        width: 128px;
+        padding-left: 16px;
+      }
+    }
+
+    .select-date {
+      height: 24px;
+      width: 128px;
+      background-color: #ffffff;
+      color: #555;
+      display: flex;
+
+      .select-date::placeholder {
+        font-size: 12px;
+        font-family: "Source Sans 3", sans-serif;
+        font-weight: 400;
+      }
+
+      .select-date-input {
+        font-size: 12px;
+        font-family: "Source Sans 3", sans-serif;
+        font-weight: 400;
+        border: 1px solid #555;
+        border-radius: 16px;
+        width: 128px;
+        padding-left: 16px;
+        background: transparent url("~assets/icons/calendar_month.svg")
+          no-repeat calc(100% - 10px) center;
+      }
+    }
+  }
+
+  .q-table {
+    font-size: 12px;
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 400;
+    width: 1320px;
+
+    .q-table__top,
+    thead tr:first-child th {
+      /* bg color is important for th; just specify one */
+      font-weight: bold;
+      background-color: #249990;
+      color: #ffffff;
+    }
+
+    td {
+      height: 32px;
+    }
+
+    tr:hover {
+      cursor: pointer;
+    }
+
+    tr:nth-child(odd) {
+      background-color: #ffffff;
+    }
+
+    tr:nth-child(even) {
+      background-color: #ebebeb;
+    }
+
+    tr:active {
+      opacity: 0.7;
+    }
+  }
+}
