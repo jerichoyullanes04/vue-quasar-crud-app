@@ -27,7 +27,7 @@
     <div class="side-bar-bottom">
       <img class="home-icon" src="~assets/icons/home.svg" alt="" />
       <img class="menu-icon" src="~assets/icons/menu.svg" alt="" />
-      <div>Menu</div>
+      <div class="menu-text">Menu</div>
     </div>
   </div>
 

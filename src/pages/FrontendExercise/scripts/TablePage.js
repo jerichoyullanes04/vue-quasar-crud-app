@@ -60,6 +60,7 @@ export default {
     //   // Add more rows as needed
     // ]);
 
+    const router = useRouter();
     // Define table rows
     const rows = ref([]);
     // Define table columns
@@ -137,19 +138,23 @@ export default {
     // Edit Todo Function
     let editBtnLoadingState = ref(false);
     const editEmployee = () => {
-      console.log("Testing Edit Button");
-      console.log(selectedRow.value);
+      //console.log("Testing Edit Button");
+      ///console.log(selectedRow.value);
 
-      this.$router.push({
-        name: "form-page",
-        params: {
-          id: row.id,
-          name: row.name,
-          email: row.email,
-          status: row.status,
-          address: row.address,
-        },
-      });
+      const data = defineComponent([selectedRow.value]);
+      console.log(data);
+      // this.$router.push({
+      //   name: "form-page",
+      //   params: {
+      //     id: row.id,
+      //     name: row.name,
+      //     email: row.email,
+      //     status: row.status,
+      //     address: row.address,
+      //   },
+      // });
+
+      router.push({ name: "form-page" });
     };
 
     // DELETE Todo Function

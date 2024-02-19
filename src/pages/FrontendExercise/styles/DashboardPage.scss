@@ -55,10 +55,12 @@ body {
 
     .notif-icon {
       height: 24px;
+      cursor: pointer;
     }
     .user-icon {
       height: 35px;
       margin-right: 19px;
+      cursor: pointer;
     }
   }
 }
@@ -97,6 +99,13 @@ body {
     font-family: "Source Sans 3", sans-serif;
     font-weight: 400;
     font-size: 11px;
+  }
+
+  .logo-icon,
+  .home-icon,
+  .menu-icon,
+  .menu-text {
+    cursor: pointer;
   }
 }
 
