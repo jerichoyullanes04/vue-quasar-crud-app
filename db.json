@@ -4,8 +4,8 @@
       "id": "B1-024",
       "name": "Juan A. Carlos",
       "email": "Carlos@gmail.com",
-      "status": "Single",
-      "address": "Brgy. Tagajanlang, Legazpi City"
+      "address": "Brgy. Tagajanlang, Legazpi City",
+      "status": "Single"
     },
     {
       "id": "B1-001",
@@ -41,42 +41,6 @@
       "email": "Boyboy@gmail.com",
       "status": "Married",
       "address": "Brgy. Dikoalam, Legazpi City"
-    },
-    {
-      "id": "10123",
-      "name": "Jericho",
-      "email": "Jericho@gmail.com",
-      "task": "Task 2 ",
-      "desc": "Create Page",
-      "status": "Single",
-      "address": "Bulacan"
-    },
-    {
-      "id": "10234",
-      "name": "Rhona",
-      "email": "Rhona@gmail.com",
-      "task": "Task 2",
-      "desc": "Task 2 ",
-      "status": "Taken",
-      "address": "Blk 8 lot 5"
-    },
-    {
-      "id": "112341",
-      "name": "Juan",
-      "email": "Juan@gmail.com",
-      "task": "Task 2",
-      "desc": "Task 2 description",
-      "status": "On going ",
-      "address": "Bulacan"
-    },
-    {
-      "id": "12345",
-      "name": "Testlang",
-      "email": "testlang@gmail.com",
-      "task": "task 3",
-      "desc": "task 3 description",
-      "status": "On going",
-      "address": "Palmera"
     }
   ],
   "comments": [

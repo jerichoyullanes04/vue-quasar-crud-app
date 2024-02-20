@@ -1,105 +1,94 @@
-import { createApp, ref, defineComponent } from "vue";
-import { useRouter } from "vue-router";
+import { ref } from "vue";
 import axios from "axios";
 
 export default {
   methods: {
-    // myFunction() {
-    //   console.log("test");
-    // },
-
     navigateToPreviousPage() {
       this.$router.push({ name: "table-page" });
       console.log("back to previous page");
     },
-
-    // async navigateToNextPage() {
-    //   await this.$router.push({ name: "form-page" });
-    //   //this.$router.push("/FormPage.vue");
-    // },
   },
 
-  name: "MyForm",
-  setup(props) {
-    const users = ref([]);
-    const name = ref("");
-    const id = ref("");
-    const email = ref("");
-    const task = ref("");
-    const desc = ref("");
-    const status = ref("");
-    const address = ref("");
-    const router = useRouter();
+  setup() {
+    let form = ref({
+      id: null,
+      name: null,
+      email: null,
+      task: null,
+      desc: null,
+      address: null,
+      status: null,
+    });
 
-    const navigateToPreviousPage = () => {
-      router.push({ name: "table-page" });
-      console.log("back to the previous page");
-    };
+    let storeID = null;
+    let rows = ref([]);
 
-    const submitForm = async () => {
-      // Handle form submission logic here
-      // console.log("Form submitted:", {
-      //   id: id.value,
-      //   name: name.value,
-      //   email: email.value,
-      //   task: task.value,
-      //   desc: desc.value,
-      //   status: status.value,
-      //   address: address.value,
-      // });
-
-      const user = {
-        id: id.value,
-        name: name.value,
-        email: email.value,
-        task: task.value,
-        desc: desc.value,
-        status: status.value,
-        address: address.value,
-      };
-      addUserLocally(user);
-
-      try {
-        // Save data to the server
-        await saveUserToServer(user);
-        clearForm();
-      } catch (error) {
-        console.error("Error saving user:", error);
+    const checkStoreID = () => {
+      if (!storeID) {
+        return false;
       }
-
-      navigateToPreviousPage();
+      return true;
     };
 
-    const addUserLocally = (user) => {
-      // Add user to local data for immediate UI update
-      users.value.push(user);
+    const getID = (id) => {
+      storeID = id;
+      if (checkStoreID()) {
+        getData();
+      }
     };
 
-    const saveUserToServer = async (user) => {
-      // Save user data to the server using Axios
-      await axios.post("http://localhost:5000/posts", user);
+    const getData = () => {
+      axios.get(`http://localhost:5000/posts/${storeID}`).then((response) => {
+        form.value.id = response.data.id;
+        form.value.name = response.data.name;
+        form.value.email = response.data.email;
+        form.value.task = response.data.task;
+        form.value.desc = response.data.desc;
+        form.value.address = response.data.address;
+        form.value.status = response.data.status;
+      });
     };
 
-    const clearForm = () => {
-      // Clear form fields after submission
-      name.value = "";
-      id.value = "";
-      email.value = "";
-      task.value = "";
-      desc.value = "";
-      status.value = "";
-      address.value = "";
+    const updateData = () => {
+      axios.put(`http://localhost:5000/posts/${storeID}`, {
+        id: form.value.id,
+        name: form.value.name,
+        email: form.value.email,
+        task: form.value.task,
+        desc: form.value.desc,
+        address: form.value.address,
+        status: form.value.status,
+      });
+    };
+
+    const saveChanges = () => {
+      axios.post("http://localhost:5000/posts", form.value).then((response) => {
+        if (response.status === 5) {
+          rows.value.unshift(response.data);
+          form.value.id = null;
+          form.value.name = null;
+          form.value.email = null;
+          form.value.task = null;
+          form.value.desc = null;
+          form.value.address = null;
+          form.value.status = null;
+        }
+      });
     };
 
     return {
-      name,
-      id,
-      email,
-      task,
-      desc,
-      status,
-      address,
-      submitForm,
+      form,
+      checkStoreID,
+      getID,
+      updateData,
+      saveChanges,
+      editDialog: ref(false),
+      addDialog: ref(false),
     };
+  },
+
+  mounted() {
+    const id = this.$route.query.id;
+    this.getID(id);
   },
 };

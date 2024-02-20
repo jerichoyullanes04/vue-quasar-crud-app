@@ -67,81 +67,171 @@
         <div class="row justify-center items-center">
           <div class="q-pa-md" style="width: 456px">
             <q-scroll-area style="height: 500px; max-width: 456px">
-              <q-form @submit="submitForm">
+              <q-form @submit="!checkStoreID() ? saveChanges() : updateData()">
+                <!--name-->
                 <div class="form-input-container">
                   <span class="form-label">Name:</span>
                   <q-input
-                    dense
-                    color="teal"
-                    outlined
-                    v-model="name"
+                    v-model="form.name"
                     placeholder="Enter Name"
-                  />
+                    outlined
+                    color="teal"
+                    :rules="[
+                      (val) => (val && val.length > 0) || 'Field is Required!',
+                    ]"
+                  >
+                  </q-input>
                 </div>
+                <!--name end-->
+
+                <!--id-->
                 <div class="form-input-container">
                   <span class="form-label">Employee ID:</span>
                   <q-input
-                    dense
+                    v-model="form.id"
+                    placeholder="Enter Employer ID"
                     color="teal"
                     outlined
-                    v-model="id"
-                    placeholder="Enter Employee ID"
-                  />
+                    :rules="[
+                      (val) => (val && val.length > 0) || 'Field is Required!',
+                    ]"
+                  >
+                  </q-input>
                 </div>
+                <!--id end-->
+
+                <!--email-->
                 <div class="form-input-container">
                   <span class="form-label">Email:</span>
                   <q-input
-                    dense
+                    v-model="form.email"
+                    placeholder="Enter Email: exampl@gmail.com"
                     color="teal"
                     outlined
-                    v-model="email"
-                    placeholder="Email"
-                    type="email"
-                  />
+                    :rules="[
+                      (val) => (val && val.length > 0) || 'Field is Required!',
+                    ]"
+                  >
+                  </q-input>
                 </div>
+                <!--email end-->
+
+                <!--task-->
                 <div class="form-input-container">
                   <span class="form-label">Current Task:</span>
                   <q-input
-                    dense
+                    v-model="form.task"
+                    placeholder="Enter Current Task"
                     color="teal"
                     outlined
-                    v-model="task"
-                    placeholder="Enter current task"
-                  />
+                    :rules="[
+                      (val) => (val && val.length > 0) || 'Field is Required!',
+                    ]"
+                  >
+                  </q-input>
                 </div>
+                <!--task end-->
+
+                <!--description-->
                 <div class="form-input-container">
                   <span class="form-label">Description:</span>
                   <q-input
-                    type="textarea"
+                    v-model="form.desc"
+                    placeholder="Enter Task Description"
                     color="teal"
                     outlined
-                    v-model="desc"
-                    placeholder="Enter Description"
-                  />
+                    style="height: 168px"
+                    type="textarea"
+                    :rules="[
+                      (val) => (val && val.length > 0) || 'Field is Required!',
+                    ]"
+                  >
+                  </q-input>
                 </div>
+                <!--description end-->
+
+                <!--status-->
                 <div class="form-input-container">
                   <span class="form-label">Status:</span>
                   <q-input
-                    dense
+                    v-model="form.status"
+                    placeholder="Enter Task Status"
                     color="teal"
                     outlined
-                    v-model="status"
-                    placeholder="Enter Status"
-                  />
+                    :rules="[
+                      (val) => (val && val.length > 0) || 'Field is Required!',
+                    ]"
+                  >
+                  </q-input>
                 </div>
+                <!--status end-->
 
+                <!--address-->
                 <div class="form-input-container">
-                  <span class="form-label">House Address:</span>
+                  <span class="form-label">Description:</span>
                   <q-input
-                    dense
+                    v-model="form.address"
+                    placeholder="Enter Address Ex: Brgy. Kaypian, San Jose Del Monte City."
                     color="teal"
                     outlined
-                    v-model="address"
-                    placeholder="Enter House Address"
-                  />
+                    style="padding-bottom: 32"
+                    :rules="[
+                      (val) => (val && val.length > 0) || 'Field is Required!',
+                    ]"
+                  >
+                  </q-input>
                 </div>
-                <button type="submit" class="save-btn">Save Changes</button>
-                <!-- <q-btn type="submit" label="Save Changes" color="primary" /> -->
+                <!--address end-->
+
+                <!--submit button-->
+                <button
+                  type="submit"
+                  :label="!checkStoreID() ? 'Add Employee' : 'Save Changes'"
+                  rounded
+                  color="secondary"
+                  @click="
+                    !checkStoreID() ? (addDialog = true) : (editDialog = true)
+                  "
+                  class="save-btn"
+                >
+                  Save Changes
+                </button>
+
+                <!--add dialog-->
+                <q-dialog v-model="addDialog">
+                  <q-card style="width: 250px">
+                    <q-card-section
+                      class="column flex flex-center wrap items-center"
+                    >
+                      <div class="q-pb-md">Employee Added!</div>
+                      <q-btn
+                        color="secondary"
+                        outlined
+                        @click="navigateToPreviousPage"
+                        label="Close"
+                      ></q-btn>
+                    </q-card-section>
+                  </q-card>
+                </q-dialog>
+                <!--add dialog end-->
+
+                <!--edit dialog-->
+                <q-dialog v-model="editDialog">
+                  <q-card style="width: 250px">
+                    <q-card-section
+                      class="column flex flex-center wrap items-center"
+                    >
+                      <div class="q-pb-md">Changes Saved!</div>
+                      <q-btn
+                        color="secondary"
+                        outlined
+                        @click="navigateToPreviousPage"
+                        label="Close"
+                      ></q-btn>
+                    </q-card-section>
+                  </q-card>
+                </q-dialog>
+                <!--edit dialog end-->
               </q-form>
             </q-scroll-area>
           </div>

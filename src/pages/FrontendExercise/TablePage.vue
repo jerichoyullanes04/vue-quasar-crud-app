@@ -97,7 +97,7 @@
             :columns="columns"
             :rows-per-page-options="[10, 20, 30, 50]"
             :rows-per-page="6"
-            row-key="name"
+            row-key="id"
             @row-click="onRowClick"
             flat
             bordered
@@ -118,7 +118,7 @@
                 <q-btn flat round icon="more_vert">
                   <q-popup-proxy :breakpoint="600">
                     <div class="popup">
-                      <div @click="editEmployee()" v-ripple class="edit">
+                      <div @click="editEmployee(props)" v-ripple class="edit">
                         Edit
                       </div>
                       <div @click="deleteEmployee()" v-ripple class="delete">

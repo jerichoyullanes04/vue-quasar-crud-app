@@ -3,8 +3,6 @@ import { useRouter } from "vue-router";
 import axios from "axios";
 import { httpGet } from "boot/axios";
 
-// DASHBOARD PAGE FUNCTION //
-
 //  TABLE PAGE FUNCTION //
 export default {
   data() {
@@ -41,25 +39,6 @@ export default {
 
   name: "MyTable",
   setup() {
-    // Sample data
-    // const tableData = ref([
-    //   {
-    //     id: 1,
-    //     name: "John Doe",
-    //     email: "john@example.com",
-    //     status: "single",
-    //     address: "palmera",
-    //   },
-    //   {
-    //     id: 2,
-    //     name: "Jane Doe",
-    //     email: "jane@example.com",
-    //     status: "single",
-    //     address: "palmera",
-    //   },
-    //   // Add more rows as needed
-    // ]);
-
     const router = useRouter();
     // Define table rows
     const rows = ref([]);
@@ -120,9 +99,11 @@ export default {
 
     /* FORM FUNCTION AND VARIABLES */
     let form = ref({
-      id: 1,
+      id: null,
       name: null,
       email: null,
+      task: null,
+      desc: null,
       status: null,
       address: null,
     });
@@ -136,25 +117,8 @@ export default {
     };
 
     // Edit Todo Function
-    let editBtnLoadingState = ref(false);
-    const editEmployee = () => {
-      //console.log("Testing Edit Button");
-      ///console.log(selectedRow.value);
-
-      const data = defineComponent([selectedRow.value]);
-      console.log(data);
-      // this.$router.push({
-      //   name: "form-page",
-      //   params: {
-      //     id: row.id,
-      //     name: row.name,
-      //     email: row.email,
-      //     status: row.status,
-      //     address: row.address,
-      //   },
-      // });
-
-      router.push({ name: "form-page" });
+    const editEmployee = (row) => {
+      router.push({ name: "form-page", query: { id: row.key } });
     };
 
     // DELETE Todo Function
