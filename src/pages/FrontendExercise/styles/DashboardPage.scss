@@ -1,0 +1,403 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;700&display=swap");
+
+body {
+  background-color: #f4f4f4;
+}
+
+// TOP BAR
+.top-bar {
+  height: 58px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+  // background-color: #ffffff;
+  overflow: hidden;
+  position: fixed;
+  left: 90px;
+  right: 0;
+
+  .left-side {
+    display: flex;
+    align-items: center;
+    width: 456px;
+
+    form.search-bar {
+      height: 34px;
+      width: 100%;
+      background-color: #ffffff;
+      color: #555;
+      display: flex;
+
+      .search-bar::placeholder {
+        font-family: "Source Sans 3", sans-serif;
+        font-weight: 400;
+      }
+
+      input.search-bar {
+        border: 1px solid #555;
+        border-radius: 3px;
+        width: 100%;
+        padding: 9px 4px 9px 40px;
+        background: transparent url("~assets/icons/search.svg") no-repeat 13px
+          center;
+      }
+    }
+  }
+
+  .right-side {
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0; /* Shrink */
+
+    .notif-icon {
+      height: 24px;
+      cursor: pointer;
+    }
+    .user-icon {
+      height: 35px;
+      margin-right: 19px;
+      cursor: pointer;
+    }
+  }
+}
+
+// SIDE BAR
+.side-bar {
+  width: 76px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  position: fixed;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  .side-bar-top {
+    margin-top: 24px;
+  }
+
+  .side-bar-bottom img,
+  .side-bar-top img {
+    height: 28px;
+  }
+
+  .side-bar-bottom {
+    width: 100%;
+    height: 95px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+  }
+
+  .logo-icon,
+  .home-icon,
+  .menu-icon,
+  .menu-text {
+    cursor: pointer;
+  }
+}
+
+// MENU
+.menu {
+  width: 255px;
+  height: 100%;
+  top: 82px;
+  left: 94px;
+  position: fixed;
+  background-color: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    color: #212121;
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    margin-top: 20px;
+    margin-left: 13px;
+    margin-bottom: 10px;
+  }
+
+  .menu-links {
+    display: flex;
+    padding-left: 22px;
+    padding-top: 10px;
+    padding-bottom: 4px;
+    align-items: self-start;
+    cursor: pointer;
+  }
+
+  .menu-links div {
+    font-size: 11px;
+  }
+
+  .menu-links img {
+    height: 11px;
+    padding-right: 8px;
+  }
+
+  .menu-links:hover {
+    background-color: rgb(235, 235, 235);
+    border-left-style: solid;
+    border-left-color: #249990;
+  }
+}
+
+// MAIN CONTAINER
+.main-container {
+  width: 980px;
+  height: 100%;
+  top: 84px;
+  left: 366px;
+  padding-top: 34px;
+  padding-left: 23px;
+  padding-right: 20px;
+  background-color: #ffffff;
+  position: fixed;
+  border-radius: 10px;
+
+  .title {
+    color: #249990;
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
+
+  //  DASHBOARD PAGE
+  .dashboard-page {
+    .row {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .q-card {
+      width: 100%;
+      max-width: 230px;
+      height: 220px;
+      border-radius: 8px;
+      cursor: pointer;
+
+      .desc {
+        font-size: 12px;
+      }
+    }
+  }
+
+  // TABLE PAGE
+  .table-page {
+    .table-container-header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      .right {
+        display: flex;
+        width: fit-content;
+        height: fit-content;
+      }
+
+      .add-employee-btn {
+        width: 110px;
+        background-color: #249990;
+        color: #ffffff;
+        border: none;
+        padding: 2px;
+        font-size: 12px;
+        font-family: "Source Sans 3", sans-serif;
+        font-weight: 400;
+        border-radius: 20px;
+        margin-right: 16px;
+        cursor: pointer;
+      }
+
+      .add-employee-btn:hover {
+        opacity: 0.7;
+      }
+
+      .add-employee-btn:active {
+        opacity: 0.9;
+      }
+
+      .search-employee-form {
+        height: 24px;
+        width: 128px;
+        background-color: #ffffff;
+        color: #555;
+        display: flex;
+
+        .search-employee-form::placeholder {
+          font-size: 12px;
+          font-family: "Source Sans 3", sans-serif;
+          font-weight: 400;
+        }
+
+        .search-employee-input {
+          font-size: 12px;
+          font-family: "Source Sans 3", sans-serif;
+          font-weight: 400;
+          border: 1px solid #555;
+          border-radius: 16px;
+          width: 128px;
+          padding-left: 16px;
+          background: transparent url("~assets/icons/mini-search-icon.svg")
+            no-repeat calc(100% - 10px) center;
+        }
+      }
+    }
+
+    // FORM PAGE
+    .filters {
+      display: flex;
+      font-size: 12px;
+      font-family: "Source Sans 3", sans-serif;
+      font-weight: 400;
+      align-items: center;
+
+      .filter-label,
+      .filter-by,
+      .select-date {
+        margin-right: 10px;
+        margin-bottom: 30px;
+
+        .filter-select {
+          height: 24px;
+          font-size: 12px;
+          font-family: "Source Sans 3", sans-serif;
+          font-weight: 400;
+          border: 1px solid #555;
+          border-radius: 16px;
+          width: 128px;
+          padding-left: 16px;
+        }
+      }
+
+      .select-date {
+        height: 24px;
+        width: 128px;
+        background-color: #ffffff;
+        color: #555;
+        display: flex;
+
+        .select-date::placeholder {
+          font-size: 12px;
+          font-family: "Source Sans 3", sans-serif;
+          font-weight: 400;
+        }
+
+        .select-date-input {
+          font-size: 12px;
+          font-family: "Source Sans 3", sans-serif;
+          font-weight: 400;
+          border: 1px solid #555;
+          border-radius: 16px;
+          width: 128px;
+          padding-left: 16px;
+          background: transparent url("~assets/icons/calendar_month.svg")
+            no-repeat calc(100% - 10px) center;
+        }
+      }
+    }
+
+    .q-table {
+      font-size: 12px;
+      font-family: "Source Sans 3", sans-serif;
+      font-weight: 400;
+      width: 1320px;
+
+      .q-table__top,
+      thead tr:first-child th {
+        /* bg color is important for th; just specify one */
+        font-weight: bold;
+        background-color: #249990;
+        color: #ffffff;
+      }
+
+      td {
+        height: 32px;
+      }
+
+      tr:hover {
+        cursor: pointer;
+      }
+
+      tr:nth-child(odd) {
+        background-color: #ffffff;
+      }
+
+      tr:nth-child(even) {
+        background-color: #ebebeb;
+      }
+
+      tr:active {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  .form-page {
+    .form-page-header {
+      flex: 1;
+      flex-shrink: 0; /* Shrink */
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .back-icon-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .back-icon {
+          width: 12px;
+          padding-bottom: 12px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .form-input-container {
+      font-size: 12px;
+      font-family: "Source Sans 3", sans-serif;
+      font-weight: 400;
+      margin-top: 12px;
+    }
+
+    .save-btn {
+      width: 90px;
+      height: 23px;
+      background-color: #249990;
+      color: #ffffff;
+      border: none;
+      padding: 2px;
+      font-size: 12px;
+      font-family: "Source Sans 3", sans-serif;
+      font-weight: 400;
+      border-radius: 20px;
+      margin-right: 16px;
+      margin-top: 32px;
+      cursor: pointer;
+    }
+
+    .save-btn:hover {
+      opacity: 0.7;
+    }
+
+    .save-btn:active {
+      opacity: 0.9;
+    }
+  }
+}
